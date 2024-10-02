@@ -23,24 +23,28 @@ export default async function Home() {
 				<div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-8 sm:px-16 md:grid-cols-2">
 					<div className="max-w-md space-y-4">
 						<h2 className="text-balance text-3xl font-bold tracking-tight md:text-4xl">
-							{t("hero.title")}
+							Enter an oasis of calm and tranquility
 						</h2>
-						<p className="text-pretty text-neutral-600">{t("hero.description")}</p>
+						<p className="text-pretty text-neutral-600">
+							{" "}
+							A Moorish-styled holiday villa situated within the pristine tropical rainforest of
+							Janda Baik, Pahang, Malaysia.
+						</p>
 						<YnsLink
 							className="inline-flex h-10 items-center justify-center rounded-full bg-neutral-900 px-6 font-medium text-neutral-50 transition-colors hover:bg-neutral-900/90 focus:outline-none focus:ring-1 focus:ring-neutral-950"
 							href={t("hero.link")}
 						>
-							{t("hero.action")}
+							Book Now{" "}
 						</YnsLink>
 					</div>
 					<Image
-						alt="Cup of Coffee"
+						alt="The Manzil Indoor Playground"
 						loading="eager"
 						priority={true}
 						className="rounded"
 						height={450}
 						width={450}
-						src="https://files.stripe.com/links/MDB8YWNjdF8xT3BaeG5GSmNWbVh6bURsfGZsX3Rlc3RfaDVvWXowdU9ZbWlobUIyaHpNc1hCeDM200NBzvUjqP"
+						src="/photos/manzil2.webp"
 						style={{
 							objectFit: "cover",
 						}}
@@ -49,8 +53,9 @@ export default async function Home() {
 				</div>
 			</section>
 
-			<ProductList products={products} />
-
+			{/* <ProductList products={products} />
+			 */}
+			{/* 
 			<section className="w-full py-8">
 				<div className="grid gap-8 lg:grid-cols-2">
 					{[
@@ -60,7 +65,7 @@ export default async function Home() {
 						<CategoryBox key={categorySlug} categorySlug={categorySlug} src={src} />
 					))}
 				</div>
-			</section>
+			</section> */}
 		</main>
 	);
 }

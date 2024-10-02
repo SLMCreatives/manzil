@@ -5,15 +5,19 @@ import type { SVGAttributes } from "react";
 
 const sections = [
 	{
-		header: "Products",
+		header: "Reservations",
 		links: [
 			{
-				label: "Apparel",
-				href: "/category/apparel",
+				label: "Holiday",
+				href: "/product/villa",
 			},
 			{
-				label: "Accessories",
-				href: "/category/accessories",
+				label: "Weddings",
+				href: "/product/villa",
+			},
+			{
+				label: "Corporate",
+				href: "/product/villa",
 			},
 		],
 	},
@@ -22,15 +26,15 @@ const sections = [
 		links: [
 			{
 				label: "Features",
-				href: "https://yournextstore.com/#features",
+				href: "/features",
 			},
 			{
 				label: "Pricing",
-				href: "https://yournextstore.com/#pricing",
+				href: "/pricing",
 			},
 			{
 				label: "Contact Us",
-				href: "mailto:hi@yournextstore.com",
+				href: "#",
 			},
 		],
 	},
@@ -68,23 +72,16 @@ export async function Footer() {
 			</div>
 			<div className="container mt-8 flex max-w-7xl flex-col items-center justify-between gap-4 text-sm text-neutral-500 md:flex-row">
 				<div>
-					<p>© 2024 Your Next Store</p>
-					<p>Delightfully commerce for everyone</p>
+					<p>© 2024 The Manzil Janda Baik</p>
+					<q>What you seek is seeking you</q>
 				</div>
 				<div className="flex items-center gap-4">
 					<YnsLink
 						className="inline-flex items-center gap-1 transition-colors hover:text-neutral-700"
-						href="https://x.com/zaiste"
+						href="https://instagram.com/themanziljandabaik"
 					>
-						<TwitterIcon className="h-4 w-4" /> @zaiste
-						<span className="sr-only">Twitter</span>
-					</YnsLink>
-					<YnsLink
-						className="inline-flex items-center gap-1 transition-colors hover:text-neutral-700"
-						href="https://x.com/typeofweb"
-					>
-						<TwitterIcon className="h-4 w-4" /> @typeofweb
-						<span className="sr-only">Twitter</span>
+						<TwitterIcon className="h-4 w-4" /> @themanziljandabaik
+						<span className="sr-only">Instagram</span>
 					</YnsLink>
 				</div>
 			</div>
