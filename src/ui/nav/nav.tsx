@@ -1,9 +1,9 @@
-import { signOutAction } from "@/app/actions";
-import { CartSummaryNav } from "@/ui/nav/cart-summary-nav";
+//import { signOutAction } from "@/app/actions";
+//import { CartSummaryNav } from "@/ui/nav/cart-summary-nav";
 import { NavMenu } from "@/ui/nav/nav-menu";
 //import { SearchNav } from "@/ui/nav/search-nav";
 import { SeoH1 } from "@/ui/seo-h1";
-import { Button } from "@/ui/shadcn/button";
+//import { Button } from "@/ui/shadcn/button";
 import { YnsLink } from "@/ui/yns-link";
 
 const links = [
