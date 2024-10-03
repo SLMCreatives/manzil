@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="none" viewBox="0 0 96 96" id="wifi-router">
+  <rect width="82" height="24" x="7" y="50" stroke="#000" stroke-width="5" rx="12"></rect>
+  <circle cx="34" cy="62" r="3" fill="#000"></circle>
+  <circle cx="26" cy="62" r="3" fill="#000"></circle>
+  <circle cx="18" cy="62" r="3" fill="#000"></circle>
+  <path stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="5" d="M73 21L73 50M23 21L23 50"></path>
+  <path stroke="#000" stroke-linecap="round" stroke-width="5" d="M63 31C60.9645 28.7807 58.548 27.0203 55.8885 25.8192 53.229 24.6182 50.3786 24 47.5 24 44.6214 24 41.771 24.6182 39.1115 25.8192 36.452 27.0203 34.0355 28.7807 32 31M56 37C54.8838 35.7318 53.5586 34.7259 52.1002 34.0396 50.6417 33.3532 49.0786 33 47.5 33 45.9214 33 44.3583 33.3532 42.8998 34.0396 41.4414 34.7259 40.1162 35.7318 39 37"></path>
+  <circle cx="47.5" cy="41.5" r="2.5" fill="#000"></circle>
+  <path stroke="#000" stroke-linecap="round" stroke-width="5" d="M77 62H53M21 75L21 78M75 75L75 78"></path>
+</svg>

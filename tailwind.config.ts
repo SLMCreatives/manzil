@@ -16,6 +16,11 @@ const config = {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-outfit)", "sans-serif"],
+				tangerine: ["var(--font-tangerine)", "tangerine"],
+				mono: ["var(--font-mono)", "monospace"],
+			},
 			colors: {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",

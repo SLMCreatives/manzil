@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" fill="none" viewBox="0 0 96 96" id="room-service">
+  <path fill="#FFB800" stroke="#000" stroke-linecap="round" stroke-width="5" d="M47 18C34.067 18 23.5233 28.6559 23.0189 41.9989C22.998 42.5508 23.4477 43 24 43L70 43C70.5523 43 71.002 42.5508 70.9811 41.9989C70.4767 28.6559 59.933 18 47 18Z"></path>
+  <path stroke="#000" stroke-linecap="round" stroke-width="5" d="M47 13L47 16"></path>
+  <path fill="#000" d="M43 13L51 13C52.6569 13 54 11.6569 54 10C54 8.34315 52.6569 7 51 7L47.1795 7L43 7C41.3431 7 40 8.34315 40 10C40 11.6569 41.3431 13 43 13Z"></path>
+  <path stroke="#000" stroke-linecap="round" stroke-width="5" d="M70 43L48.7561 43L15.903 43C14.0568 43 12.4505 44.2635 12.0156 46.0577L6.19801 70.0577C5.58776 72.5753 7.49497 75 10.0854 75L87 75"></path>
+  <circle cx="21" cy="81" r="6" stroke="#000" stroke-width="5" transform="rotate(-180 21 81)"></circle>
+  <circle cx="72" cy="81" r="6" stroke="#000" stroke-width="5" transform="rotate(-180 72 81)"></circle>
+  <path stroke="#000" stroke-linecap="round" stroke-width="5" d="M75 54L83 54M78 43L84.5 43M70 64L90 64"></path>
+</svg>

@@ -1,43 +1,51 @@
+import { signOutAction } from "@/app/actions";
 import { CartSummaryNav } from "@/ui/nav/cart-summary-nav";
 import { NavMenu } from "@/ui/nav/nav-menu";
-import { SearchNav } from "@/ui/nav/search-nav";
+//import { SearchNav } from "@/ui/nav/search-nav";
 import { SeoH1 } from "@/ui/seo-h1";
+import { Button } from "@/ui/shadcn/button";
 import { YnsLink } from "@/ui/yns-link";
 
 const links = [
-	{
-		label: "Home",
-		href: "/",
-	},
 	{
 		label: "Villa",
 		href: "/product/villa",
 	},
 	{
-		label: "Terms & Conditions",
-		href: "#",
+		label: "Gallery",
+		href: "/gallery",
 	},
 	{
-		label: "FAQ",
-		href: "#",
+		label: "Events",
+		href: "/events",
+	},
+	{
+		label: "T&C",
+		href: "/terms",
 	},
 ];
 
 export const Nav = async () => {
 	return (
-		<header className="border-b py-4">
-			<div className="sm:items-centerm mx-auto flex max-w-7xl flex-col items-start gap-2 px-4 sm:flex-row sm:flex-wrap sm:items-center sm:px-6 md:flex-nowrap lg:px-8">
+		<header className="border-b py-4 bg-white sticky top-0">
+			<div className="mx-auto flex flex-row  max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 ">
 				<YnsLink href="/">
 					<SeoH1 className="-mt-0.5 whitespace-nowrap text-xl font-bold">The Manzil</SeoH1>
 				</YnsLink>
 
-				<div className="sm:mr-auto">
+				<div className="sm:mr-auto md:pl-2 flex flex-row  flex-wrap items-center gap-2">
 					<NavMenu links={links} />
-				</div>
 
-				<div className="flex items-center justify-start gap-x-6">
-					<SearchNav />
-					<CartSummaryNav />
+					{/* <CartSummaryNav />
+				<form action="">
+					<Button
+					size="sm"
+					formAction={signOutAction}
+					>Sign Out</Button>
+				</form> */}
+
+					{/* <div className="flex items-center justify-start gap-x-6">
+				</div>  */}
 				</div>
 			</div>
 		</header>
