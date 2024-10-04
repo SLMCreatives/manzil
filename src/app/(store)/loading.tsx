@@ -1,15 +1,6 @@
 import Image from "next/image";
 
-export async function Buffertimer() {
-	return new Promise((resolve) => {
-		setTimeout(() => {
-			resolve(null);
-		}, 5000);
-	});
-}
-
 export default function Loading() {
-	Buffertimer();
 	return (
 		<div className="bg-primary">
 			<h1 className="sr-only">Loading...</h1>

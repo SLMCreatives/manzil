@@ -115,7 +115,7 @@ export default async function Home() {
 				</div>
 			</section>
 			<section className="lg:py-10 pt-10 flex gap-8">
-				<div className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-start justify-center lg:p-0 px-0">
+				<div className="grid grid-cols-2 lg:grid-cols-4 gap-10 items-start justify-center lg:p-0 px-0">
 					<div className="col-span-2 flex flex-col gap-4 lg:px-0 px-4">
 						<p className="text-pretty text-5xl lg:text-7xl font-tangerine flex flex-col gap-4">
 							Welcome to{" "}
@@ -159,7 +159,7 @@ export default async function Home() {
 					<Image
 						src="/unit/manzil11.webp"
 						alt="The Manzil"
-						className="min-w-42 lg:w-full h-full object-cover rounded-xl"
+						className="w-full h-full object-cover rounded-xl"
 						width={500}
 						height={500}
 						loading="lazy"
@@ -167,7 +167,7 @@ export default async function Home() {
 					<Image
 						src="/unit/manzil3.webp"
 						alt="The Manzil"
-						className="min-w-42 lg:w-full h-full object-cover rounded-xl "
+						className="w-full h-full object-cover rounded-xl "
 						width={500}
 						height={500}
 						loading="lazy"
