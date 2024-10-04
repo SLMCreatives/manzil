@@ -113,23 +113,28 @@ export default async function Home() {
 					/>
 				</div>
 			</section>
-			<section className="lg:py-10 pt-10 flex flex-wrap gap-8">
-				<div className="grid grid-cols-1 grid-cols-reverse  lg:grid-cols-3 gap-10 items-start justify-center lg:p-0 px-0">
-					<div className="flex flex-col gap-4 lg:px-0 px-4">
-						<p className="text-pretty text-3xl lg:text-5xl font-tangerine">
+			<section className="lg:py-10 pt-10 flex gap-8">
+				<div className="grid grid-cols-1 lg:grid-cols-4 gap-10 items-start justify-center lg:p-0 px-0">
+					<div className="col-span-2 flex flex-col gap-4 lg:px-0 px-4">
+						<p className="text-pretty text-5xl lg:text-7xl font-tangerine flex flex-col gap-4">
+							Welcome to{" "}
+							<span className="text-accent font-bold stroke-2 lg:text-7xl text-7xl text-nowrap">
+								The Manzil JB
+							</span>
+						</p>
+						<p className=" text-lg font-semibold lg:text-lg font-sans">
 							Inspired by the Arabic world, the villa features intricate archways, decorative
 							tilework, and natural wood elements that create a warm and inviting atmosphere.
 						</p>
-						<p className="text-pretty text-md lg:text-lg text-muted-foreground font-sans">
+						<p className=" text-md lg:text-lg text-muted-foreground font-sans">
 							The spacious interior provides ample room for families and groups, while the outdoor
 							amenities, including a private swimming pool and lush gardens, offer opportunities for
 							relaxation and recreation.
 						</p>
-						<p className="text-pretty text-md lg:text-lg text-muted-foreground font-sans">
-							Located just 45 minutes from Kuala Lumpur, The Manzil is the perfect destination for
-							those seeking a peaceful retreat. Whether you're looking to unwind with loved ones,
-							explore the surrounding nature, or simply escape the stresses of everyday life, this
-							villa provides the ideal setting for a truly memorable getaway.
+						<p className=" text-md lg:text-lg text-muted-foreground font-sans">
+							Whether you're looking to unwind with loved ones, explore the surrounding nature, or
+							simply escape the stresses of everyday life, this villa provides the ideal setting for
+							a truly memorable getaway.
 						</p>
 						<div className="flex flex-row gap-4">
 							<Link href="/product/villa">
