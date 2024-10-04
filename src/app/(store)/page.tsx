@@ -1,6 +1,6 @@
 import { publicUrl } from "@/env.mjs";
 
-import { ReviewsPage } from "@/app/reviews/page";
+import ReviewsPage from "@/app/reviews/page";
 //import { ProductList } from "@/ui/products/product-list";
 import { Button } from "@/ui/shadcn/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/ui/shadcn/card";
