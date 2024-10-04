@@ -68,17 +68,17 @@ export const Nav = async () => {
 						<SheetPortal>
 							<SheetClose />
 							<SheetContent side="right" className="w-72 h-screen">
-								<SheetHeader>
+								<SheetHeader className="ring-2">
 									<SheetClose asChild>
-										<YnsLink href="/" className="flex items-center ">
+										<YnsLink href="/" className="flex p-0 m-0 items-center justify-start">
 											<Image
 												src="/logo.png"
 												width={100}
 												height={100}
 												alt="Logo"
-												className="h-8 w-auto"
+												className="h-12 w-auto"
 											/>
-											<SeoH1 className=" whitespace-nowrap text-xl font-bold">The Manzil JB</SeoH1>
+											<SeoH1 className="sr-only">The Manzil JB</SeoH1>
 										</YnsLink>
 									</SheetClose>
 								</SheetHeader>

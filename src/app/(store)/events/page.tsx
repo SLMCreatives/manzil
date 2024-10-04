@@ -7,6 +7,9 @@ export default function EventsPage() {
 				<PartyPopper className="min-h-8 min-w-8 aspect-square text-primary" />
 				<h3 className="text-3xl font-bold">Events</h3>
 			</section>
+			<section className="py-6 rounded-xl h-72">
+				<p className="text-muted-foreground italic">Coming soon</p>
+			</section>
 		</main>
 	);
 }

@@ -1,12 +1,13 @@
 import { publicUrl } from "@/env.mjs";
 
+import { ReviewsPage } from "@/app/reviews/page";
 //import { ProductList } from "@/ui/products/product-list";
 import { Button } from "@/ui/shadcn/button";
-import { Card, CardContent, CardHeader } from "@/ui/shadcn/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/ui/shadcn/card";
 import { YnsLink } from "@/ui/yns-link";
+import { GoogleMapsEmbed } from "@next/third-parties/google";
 //import * as Commerce from "commerce-kit";
 import { ArrowRightCircle, Calendar, Images } from "lucide-react";
-
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next/types";
@@ -192,6 +193,27 @@ export default async function Home() {
 						</Card>
 					))}
 				</div>
+			</section>
+			<section className="my-8 grid grid-cols-1 lg:grid-cols-2 gap-4">
+				<Card className="p-0 m-0">
+					<GoogleMapsEmbed
+						mode="place"
+						style=""
+						apiKey="AIzaSyCb8sCSFw2f3I2Z2XXzjioY_dNeg88yf58"
+						height={500}
+						width="100%"
+						allowfullscreen={true}
+						q="The+Manzil+Janda+Baik"
+					/>
+				</Card>
+				<Card className="flex flex-col items-center justify-start">
+					<CardHeader>
+						<CardTitle>What Our Guests Are Saying</CardTitle>
+					</CardHeader>
+					<CardContent className="flex flex-col gap-4 items-center justify-start">
+						<ReviewsPage />
+					</CardContent>
+				</Card>
 			</section>
 
 			{/* <ProductList products={products} /> */}

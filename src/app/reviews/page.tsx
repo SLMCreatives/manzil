@@ -1,7 +1,11 @@
-export default function ReviewsPage() {
+"use client";
+
+import { ElfsightWidget } from "react-elfsight-widget";
+
+export function ReviewsPage() {
 	return (
-		<div>
-			<h1>Reviews</h1>
+		<div className="w-full">
+			<ElfsightWidget widgetID="87259629-d79b-45c2-93ff-3af5086637d9" />
 		</div>
 	);
 }
