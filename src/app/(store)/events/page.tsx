@@ -1,7 +1,12 @@
+import { PartyPopper } from "lucide-react";
+
 export default function EventsPage() {
 	return (
-		<div className="flex flex-col items-center justify-center">
-			<h1 className="text-3xl font-bold">Events</h1>
-		</div>
+		<main>
+			<section className=" bg-accent-foreground p-6  rounded-xl flex flex-row gap-4 items-center">
+				<PartyPopper className="min-h-8 min-w-8 aspect-square text-primary" />
+				<h3 className="text-3xl font-bold">Events</h3>
+			</section>
+		</main>
 	);
 }

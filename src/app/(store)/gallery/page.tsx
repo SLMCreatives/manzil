@@ -10,7 +10,7 @@ export default function GalleryPage() {
 				<h3 className="text-3xl font-bold">The Manzil Gallery</h3>
 			</section>
 			<section className="py-6 rounded-xl">
-				<div className="grid grid-cols-3 gap-4 ">
+				<div className="grid lg:grid-cols-3 grid-cols-2 gap-4 ">
 					{manzils.map((item) => (
 						<Image
 							key={item}
@@ -19,7 +19,7 @@ export default function GalleryPage() {
 							loading="lazy"
 							src={`/unit/manzil${item}.webp`}
 							alt="The Manzil"
-							className="min-w-full min-h-full aspect-square rounded-sm object-cover"
+							className="min-w-full min-h-full aspect-square rounded-lg object-cover"
 						/>
 					))}
 				</div>

@@ -5,9 +5,10 @@ import { Button } from "@/ui/shadcn/button";
 import { Card, CardContent, CardHeader } from "@/ui/shadcn/card";
 import { YnsLink } from "@/ui/yns-link";
 //import * as Commerce from "commerce-kit";
-import { ArrowRightCircle } from "lucide-react";
+import { ArrowRightCircle, Calendar, Images } from "lucide-react";
 
 import Image from "next/image";
+import Link from "next/link";
 import type { Metadata } from "next/types";
 
 export const metadata = {
@@ -109,6 +110,61 @@ export default async function Home() {
 							objectFit: "cover",
 						}}
 						//sizes="(max-width: 1024x) 100vw, (max-width: 1280px) 50vw, 620px"
+					/>
+				</div>
+			</section>
+			<section className="lg:py-10 pt-10 flex flex-wrap gap-8">
+				<div className="grid grid-cols-1 grid-cols-reverse  lg:grid-cols-3 gap-10 items-start justify-center lg:p-0 px-0">
+					<div className="flex flex-col gap-4 lg:px-0 px-4">
+						<p className="text-pretty text-3xl lg:text-5xl font-tangerine">
+							Inspired by the Arabic world, the villa features intricate archways, decorative
+							tilework, and natural wood elements that create a warm and inviting atmosphere.
+						</p>
+						<p className="text-pretty text-md lg:text-lg text-muted-foreground font-sans">
+							The spacious interior provides ample room for families and groups, while the outdoor
+							amenities, including a private swimming pool and lush gardens, offer opportunities for
+							relaxation and recreation.
+						</p>
+						<p className="text-pretty text-md lg:text-lg text-muted-foreground font-sans">
+							Located just 45 minutes from Kuala Lumpur, The Manzil is the perfect destination for
+							those seeking a peaceful retreat. Whether you're looking to unwind with loved ones,
+							explore the surrounding nature, or simply escape the stresses of everyday life, this
+							villa provides the ideal setting for a truly memorable getaway.
+						</p>
+						<div className="flex flex-row gap-4">
+							<Link href="/product/villa">
+								<Button
+									variant="default"
+									className="flex flex-row w-fit gap-2 items-center justify-between text-accent-foreground"
+								>
+									<Calendar className="max-h-4 max-w-4 " /> Reserve Now{" "}
+								</Button>
+							</Link>
+							<Link href="/gallery">
+								<Button
+									variant="link"
+									className="flex flex-row w-fit gap-2 items-center justify-between text-primary hover:text-accent-foreground"
+								>
+									<Images className="max-h-4 max-w-4 " /> View Gallery{" "}
+								</Button>
+							</Link>
+						</div>
+					</div>
+					<Image
+						src="/unit/manzil11.webp"
+						alt="The Manzil"
+						className="min-w-42 lg:w-full h-full object-cover rounded-xl"
+						width={500}
+						height={500}
+						loading="lazy"
+					/>
+					<Image
+						src="/unit/manzil3.webp"
+						alt="The Manzil"
+						className="min-w-42 lg:w-full h-full object-cover rounded-xl "
+						width={500}
+						height={500}
+						loading="lazy"
 					/>
 				</div>
 			</section>
