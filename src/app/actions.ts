@@ -130,3 +130,31 @@ export const signOutAction = async () => {
 	await supabase.auth.signOut();
 	return redirect("/sign-in");
 };
+
+export const reserveAction = async (formData: FormData) => {
+	const check_in_date = formData.get("check_in_date")?.toString();
+	const check_out_date = formData.get("check_out_date")?.toString();
+	const no_of_guest = formData.get("no_of_guest")?.toString();
+
+	const user_id = formData.get("user_id")?.toString();
+	const status = false;
+	const confirmed = false;
+
+	const supabase = createClient();
+
+	const { error } = await supabase.from("reservations").insert({
+		check_in_date,
+		check_out_date,
+		no_of_guest,
+		user_id,
+		status,
+		confirmed,
+	});
+
+	if (error) {
+		console.error(error);
+		return encodedRedirect("error", "/reserve", error.message);
+	}
+
+	return console.log("Reservation created successfully");
+};

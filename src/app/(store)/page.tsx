@@ -70,14 +70,16 @@ export default async function Home() {
 						A Moorish-styled holiday villa sited within the pristine tropical rainforest of Janda
 						Baik, Pahang.
 					</p>
-					<Button
-						variant="link"
-						className="flex flex-row w-fit items-center gap-6 px-0 justify-between text-accent-foreground text-xl"
-						size="lg"
-					>
-						Book Now
-						<ArrowRightCircle className="h-6 w-6 stroke-2" />
-					</Button>
+					<YnsLink href="/booking">
+						<Button
+							variant="link"
+							className="flex flex-row w-fit items-center gap-6 px-0 justify-between text-accent-foreground text-xl"
+							size="lg"
+						>
+							Book Now
+							<ArrowRightCircle className="h-6 w-6 stroke-2" />
+						</Button>
+					</YnsLink>
 				</div>
 			</section>
 
@@ -94,7 +96,7 @@ export default async function Home() {
 						</p>
 						<YnsLink
 							className="inline-flex h-10 items-center justify-center rounded-full bg-neutral-900 px-6 font-medium text-neutral-50 transition-colors hover:bg-neutral-900/90 focus:outline-none focus:ring-1 focus:ring-neutral-950"
-							href="/product/villa"
+							href="/booking"
 						>
 							Book Now
 						</YnsLink>

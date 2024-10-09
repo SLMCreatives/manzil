@@ -2,6 +2,7 @@
 //import { CartSummaryNav } from "@/ui/nav/cart-summary-nav";
 import { NavMenu } from "@/ui/nav/nav-menu";
 import { SeoH1 } from "@/ui/seo-h1";
+import { Button } from "@/ui/shadcn/button";
 import {
 	Sheet,
 	SheetClose,
@@ -17,19 +18,20 @@ import { YnsLink } from "@/ui/yns-link";
 import { MenuIcon } from "lucide-react";
 //import { SearchNav } from "@/ui/nav/search-nav";
 import Image from "next/image";
+import Link from "next/link";
 
 const links = [
 	{
 		label: "Villa",
-		href: "/product/villa",
+		href: "/",
+	},
+	{
+		label: "About",
+		href: "/about",
 	},
 	{
 		label: "Gallery",
 		href: "/gallery",
-	},
-	{
-		label: "Events",
-		href: "/events",
 	},
 	{
 		label: "T&C",
@@ -48,6 +50,9 @@ export const Nav = async () => {
 
 				<div className=" lg:flex flex-row  flex-wrap items-center gap-2 hidden">
 					<NavMenu links={links} />
+					<YnsLink href="/booking">
+						<Button variant="default">Book Now</Button>
+					</YnsLink>
 
 					{/* <CartSummaryNav />
 				<form action="">
@@ -67,7 +72,7 @@ export const Nav = async () => {
 						</SheetTrigger>
 						<SheetPortal>
 							<SheetClose />
-							<SheetContent side="right" className="w-72 h-screen">
+							<SheetContent side="right" className="w-72">
 								<SheetHeader className="">
 									<SheetClose asChild>
 										<YnsLink href="/" className="flex p-0 m-0 items-center justify-start">
@@ -82,7 +87,7 @@ export const Nav = async () => {
 										</YnsLink>
 									</SheetClose>
 								</SheetHeader>
-								<SheetDescription className="flex flex-col gap-4 py-10 text-lg">
+								<SheetDescription className="flex flex-col gap-4 py-10 text-lg ">
 									{links.map((link) => (
 										<SheetClose key={link.label} asChild>
 											<YnsLink
@@ -94,9 +99,19 @@ export const Nav = async () => {
 											</YnsLink>
 										</SheetClose>
 									))}
+									<SheetClose asChild>
+										<YnsLink href="/booking">
+											<Button variant="link" className="p-0 text-lg">
+												Book Now
+											</Button>
+										</YnsLink>
+									</SheetClose>
 								</SheetDescription>
-								<SheetFooter className="flex flex-col gap-4 py-10 text-sm text-foreground bottom-4">
-									@ 2024 The Manzil JB
+								<SheetFooter className="absolute bottom-4 flex gap-2 flex-row text-sm text-foreground ">
+									<p>&copy; 2024</p> |{" "}
+									<Link href="/" className="hover:underline">
+										The Manzil Janda Baik
+									</Link>
 								</SheetFooter>
 							</SheetContent>
 						</SheetPortal>

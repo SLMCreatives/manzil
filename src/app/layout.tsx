@@ -1,6 +1,6 @@
 import "@/app/globals.css";
 import { env, publicUrl } from "@/env.mjs";
-import { Toaster } from "@/ui/shadcn/sonner";
+import { Toaster } from "@/ui/shadcn/toaster";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
@@ -42,7 +42,7 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
 					<div className="flex min-h-full flex-1 flex-col" vaul-drawer-wrapper="">
 						{children}
 					</div>
-					<Toaster position="top-center" offset={10} />
+					<Toaster />
 				</NextIntlClientProvider>
 				{env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
 					<Script
