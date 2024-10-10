@@ -55,7 +55,7 @@
 			"suspicious": {
 				"noEmptyBlockStatements": "off",
 				"noEmptyInterface": "off",
-				"noExplicitAny": "error",
+				"noExplicitAny": "off",
 				"noExtraNonNullAssertion": "error",
 				"noMisleadingInstantiator": "error",
 				"noUnsafeDeclarationMerging": "error",

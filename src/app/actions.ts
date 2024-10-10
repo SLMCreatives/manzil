@@ -2,6 +2,7 @@
 
 import { createClient } from "@/app/utils/supabase/server";
 import { encodedRedirect } from "@/app/utils/utils";
+import { revalidatePath } from "next/cache";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -157,4 +158,48 @@ export const reserveAction = async (formData: FormData) => {
 	}
 
 	return console.log("Reservation created successfully");
+};
+
+export const lockReservationAction = async (formData: FormData) => {
+	const full_name = formData.get("full_name")?.toString();
+	const email = formData.get("email")?.toString();
+	const no_of_guest = formData.get("pax")?.toString();
+	const check_in = formData.get("checkin")?.toString();
+	const nights = formData.get("nights")?.toString();
+	const status = formData.get("status")?.toString();
+	const user_id = formData.get("user_id")?.toString();
+
+	const supabase = createClient();
+
+	const { error } = await supabase.from("reservations").insert({
+		full_name,
+		email,
+		no_of_guest,
+		check_in,
+		nights,
+		status,
+		user_id,
+	});
+
+	if (error) {
+		console.error(error);
+	} else {
+		console.log("Reservation locked successfully");
+		return;
+		revalidatePath("/dashboard");
+		redirect("/dashboard");
+	}
+};
+
+export const deleteReservationAction = async (formData: FormData) => {
+	const id = formData.get("id")?.toString();
+	const supabase = createClient();
+	const { error } = await supabase.from("reservations").delete().eq("id", id);
+	if (error) {
+		console.error(error);
+	} else {
+		console.log("Reservation deleted successfully");
+		return revalidatePath("/dashboard");
+		redirect("/dashboard");
+	}
 };

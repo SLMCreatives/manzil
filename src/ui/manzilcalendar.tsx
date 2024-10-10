@@ -26,48 +26,6 @@ import { useState } from "react";
 import type { DateRange } from "react-day-picker";
 
 export default function CalendarSection() {
-	/* const dbRes = reservations?.reservations?.map((res: any) => {
-        return {
-            ...res.resdates
-        }
-    }); */
-
-	//const [ selectedDates, setSelectedDates ] = useState<Date[]>([]);
-	//const [ disabledDates, setDisabledDates ] = useState<Date[]>([]);
-	/*  const getFormatedDates = (dbRes: any[]) => {
-        const formattedDates: Date[] = []
-        dbRes.forEach((dbRes) => {
-            const startDate = new Date(dbRes.start)
-            const endDate = new Date(dbRes.end)
-
-            const datesInRange = eachDayOfInterval({ start: startDate, end: endDate })
-
-
-            datesInRange.forEach((date) => {
-				formattedDates.push(new Date(date))
-            })
-        })
-
-        return formattedDates
-    } */
-	/* 
-	const getSelectedDates = (date: DateRange) => {
-		const selectedDays: Date[] = []
-
-		const startDate = new Date(date?.from || new Date())
-		const endDate = new Date(date?.to || new Date())
-
-		const datesInRange = eachDayOfInterval({ start: startDate, end: endDate })
-
-		datesInRange.forEach((date) => {
-			selectedDays.push(new Date(date))
-		})
-
-		return selectedDays
-	} */
-
-	//const formattedDates = getFormatedDates(dbRes);
-	//const [disabledDates, setDisabledDates] = useState<Date[]>([...formattedDates]);
 	const [date, setDate] = useState<DateRange | undefined>({
 		from: new Date(),
 		to: addDays(new Date(), 2),
