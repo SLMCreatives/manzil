@@ -10,14 +10,7 @@ import { cn } from "@/lib/utils";
 import { Badge } from "@/ui/shadcn/badge";
 import { Button } from "@/ui/shadcn/button";
 import { Calendar } from "@/ui/shadcn/calendar";
-import {
-	Card,
-	CardContent,
-	CardDescription,
-	CardFooter,
-	CardHeader,
-	CardTitle,
-} from "@/ui/shadcn/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/ui/shadcn/card";
 import {
 	Drawer,
 	DrawerContent,
