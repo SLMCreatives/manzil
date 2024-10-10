@@ -185,8 +185,7 @@ export const lockReservationAction = async (formData: FormData) => {
 		console.error(error);
 	} else {
 		console.log("Reservation locked successfully");
-		return;
-		revalidatePath("/dashboard");
+		return revalidatePath("/dashboard");
 		redirect("/dashboard");
 	}
 };

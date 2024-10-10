@@ -46,11 +46,9 @@ export default function ReservationSection(reservations: ReservationProps) {
 	const dbresList = reservations;
 	const [checkInDate, setCheckInDate] = useState<Date | undefined>();
 
-	const resDates = dbresList.reservations
-		?.filter((res: any) => res.status === "confirmed")
-		.map((res: any) => {
-			return new Date(res.check_in);
-		});
+	const resDates = dbresList.reservations?.map((res: any) => {
+		return new Date(res.check_in);
+	});
 
 	const resNights = dbresList.reservations?.map((res: any) => {
 		return res.nights;
@@ -61,7 +59,7 @@ export default function ReservationSection(reservations: ReservationProps) {
 		for (let i = 0; i < resDates.length; i++) {
 			const intervals = eachDayOfInterval({
 				start: new Date(resDates[i]),
-				end: addDays(resDates[i], resNights[i]),
+				end: addDays(resDates[i], resNights[i] > 1 ? resNights[i] - 1 : 0),
 			});
 
 			formattedDates.push(...intervals);
@@ -92,6 +90,7 @@ export default function ReservationSection(reservations: ReservationProps) {
 									selected: "text-red-500 bg-red-100 ",
 									outside: "text-gray-400",
 									today: "ring-red-200 ring-1 text-primary",
+									overlapping: "ring-yellow-200 ring-2 text-red-500",
 								}}
 								onSelect={() => setDrawerOpen(true)}
 							/>
@@ -164,6 +163,9 @@ export default function ReservationSection(reservations: ReservationProps) {
 													disabled={formattedDates}
 													initialFocus
 													numberOfMonths={1}
+													modifiersClassNames={{
+														disabled: "text-red-500 bg-red-100",
+													}}
 												/>
 
 												<div className="grid grid-cols-2 gap-4">
@@ -198,7 +200,13 @@ export default function ReservationSection(reservations: ReservationProps) {
 												<Input
 													id="checkin"
 													name="checkin"
-													value={checkInDate?.toISOString()}
+													value={
+														checkInDate?.toLocaleDateString("en-MY", {
+															year: "numeric",
+															month: "short",
+															day: "numeric",
+														}) || ""
+													}
 													className="sr-only"
 												/>
 												<SubmitButton
