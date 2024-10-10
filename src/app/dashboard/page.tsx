@@ -16,12 +16,13 @@ import {
 } from "@/ui/shadcn/dropdown-menu";
 import { Input } from "@/ui/shadcn/input";
 import { ScrollArea } from "@/ui/shadcn/scroll-area";
-import { Sheet, SheetContent, SheetTrigger } from "@/ui/shadcn/sheet";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "@/ui/shadcn/sheet";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/ui/shadcn/table";
-import { SubmitButton } from "@/ui/submit-button";
+//import { SubmitButton } from "@/ui/submit-button";
 import Image from "next/image";
 //import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
 import { useState } from "react";
+//import { BarChart, Pie, PieChart, ResponsiveContainer } from "recharts";
 
 const nav = [
 	{
@@ -84,7 +85,7 @@ const customers = [
 	},
 ];
 
-const data = [
+/* const data = [
 	{
 		name: "Jan",
 		total: Math.floor(Math.random() * 5000) + 1000,
@@ -133,7 +134,7 @@ const data = [
 		name: "Dec",
 		total: Math.floor(Math.random() * 5000) + 1000,
 	},
-];
+]; */
 
 export default function Dashboard() {
 	const [navselect, setNavselect] = useState("Dashboard");
@@ -160,17 +161,16 @@ export default function Dashboard() {
 					<div className="flex-1">
 						<nav className="grid items-start px-2 text-sm font-medium gap-4 lg:px-4">
 							{nav.map((item) => (
-								<SubmitButton
+								<Button
 									variant={item.label === navselect ? "default" : "ghost"}
 									key={item.label}
 									//href={item.href}
 									className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
-									aria-current={item.label === navselect ? navselect : undefined}
-									onClick={e}
+									onClick={() => setNavselect(item.label)}
 								>
 									<item.icon className="h-4 w-4" />
 									{item.label}
-								</SubmitButton>
+								</Button>
 							))}
 						</nav>
 					</div>
@@ -196,14 +196,17 @@ export default function Dashboard() {
 								/>
 								<span className="sr-only">The Manzil JB</span>
 								{nav.map((item) => (
-									<Button
-										key={item.label}
-										//href="#"
-										className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2 text-muted-foreground hover:text-foreground"
-									>
-										<item.icon className="h-5 w-5" />
-										{item.label}
-									</Button>
+									<SheetClose asChild>
+										<Button
+											key={item.label}
+											className="mx-[-0.65rem] flex items-center gap-4 rounded-xl px-3 py-2"
+											variant={item.label === navselect ? "default" : "ghost"}
+											onClick={() => setNavselect(item.label)}
+										>
+											<item.icon className="h-5 w-5" />
+											{item.label}
+										</Button>
+									</SheetClose>
 								))}
 							</nav>
 						</SheetContent>
@@ -431,6 +434,7 @@ function analytics() {
 				<p className="text-lg font-semibold md:text-2xl">Analytics</p>
 				<p className="text-sm text-muted-foreground">Coming Soon</p>
 			</div>
+			<div className="flex flex-col gap-2"></div>
 		</main>
 	);
 }
