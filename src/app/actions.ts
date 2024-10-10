@@ -203,3 +203,32 @@ export const deleteReservationAction = async (formData: FormData) => {
 		redirect("/dashboard");
 	}
 };
+
+export const pendingStatus = async (formData: FormData) => {
+	const id = formData.get("id")?.toString();
+	const supabase = createClient();
+	const { error } = await supabase.from("reservations").update({ status: "pending" }).eq("id", id);
+	if (error) {
+		console.error(error);
+	} else {
+		console.log("Reservation updated successfully");
+		return revalidatePath("/dashboard");
+		redirect("/dashboard");
+	}
+};
+
+export const confirmedStatus = async (formData: FormData) => {
+	const id = formData.get("id")?.toString();
+	const supabase = createClient();
+	const { error } = await supabase
+		.from("reservations")
+		.update({ status: "confirmed" })
+		.eq("id", id);
+	if (error) {
+		console.error(error);
+	} else {
+		console.log("Reservation updated successfully");
+		return revalidatePath("/dashboard");
+		redirect("/dashboard");
+	}
+};

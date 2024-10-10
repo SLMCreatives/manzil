@@ -7,7 +7,10 @@ import Sidebar from "@/ui/dashboard/sidebar";
 
 export default async function Dashboard() {
 	const supabase = createClient();
-	const { data: dbres, error } = await supabase.from("reservations").select("*");
+	const { data: dbres, error } = await supabase
+		.from("reservations")
+		.select("*")
+		.order("id", { ascending: false });
 	if (error) {
 		console.log(error);
 	} else {
