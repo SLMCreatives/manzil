@@ -1,5 +1,5 @@
 import { createClient } from "@/app/utils/supabase/server";
-import ReservationSection from "@/ui/dashboard/reservations";
+import CustomerSection from "@/ui/dashboard/customers";
 
 export default async function Dashboard() {
 	const supabase = createClient();
@@ -12,7 +12,7 @@ export default async function Dashboard() {
 	} else {
 		return (
 			<div>
-				<ReservationSection reservations={dbres} />
+				<CustomerSection customers={dbres} />
 			</div>
 		);
 	}

@@ -1,73 +1,50 @@
+import { Badge } from "@/ui/shadcn/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/ui/shadcn/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/ui/shadcn/table";
+import { format } from "date-fns";
 
-const customers = [
-	{
-		id: "CUST001",
-		name: "Alice Johnson",
-		email: "alice@example.com",
-		totalOrders: 15,
-		totalSpent: "$1,200",
-	},
-	{
-		id: "CUST002",
-		name: "Bob Smith",
-		email: "bob@example.com",
-		totalOrders: 8,
-		totalSpent: "$750",
-	},
-	{
-		id: "CUST003",
-		name: "Charlie Brown",
-		email: "charlie@example.com",
-		totalOrders: 22,
-		totalSpent: "$2,100",
-	},
-	{
-		id: "CUST004",
-		name: "Diana Prince",
-		email: "diana@example.com",
-		totalOrders: 5,
-		totalSpent: "$500",
-	},
-	{
-		id: "CUST005",
-		name: "Ethan Hunt",
-		email: "ethan@example.com",
-		totalOrders: 12,
-		totalSpent: "$980",
-	},
-];
+interface CustomerProps {
+	customers: string[];
+}
 
-export default function CustomerSection() {
+export default function CustomerSection(customers: CustomerProps) {
 	return (
 		<main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-6">
-			<div className="flex items-center">
-				<h1 className="text-lg font-semibold md:text-2xl">Customers</h1>
-			</div>
-			<div className="border shadow-sm rounded-lg">
-				<Table>
-					<TableHeader>
-						<TableRow>
-							<TableHead className="w-[100px]">Customer ID</TableHead>
-							<TableHead>Name</TableHead>
-							<TableHead>Email</TableHead>
-							<TableHead>Total Orders</TableHead>
-							<TableHead>Total Spent</TableHead>
-						</TableRow>
-					</TableHeader>
-					<TableBody>
-						{customers.map((customer) => (
-							<TableRow key={customer.id}>
-								<TableCell className="font-medium">{customer.id}</TableCell>
-								<TableCell>{customer.name}</TableCell>
-								<TableCell>{customer.email}</TableCell>
-								<TableCell>{customer.totalOrders}</TableCell>
-								<TableCell>{customer.totalSpent}</TableCell>
+			<Card>
+				<CardHeader>
+					<CardTitle className="text-xl font-bold">Customers</CardTitle>
+				</CardHeader>
+				<CardContent>
+					<Table>
+						<TableHeader>
+							<TableRow>
+								<TableHead className="w-fit">ID</TableHead>
+								<TableHead>Name</TableHead>
+								<TableHead className="hidden md:table-cell">Email</TableHead>
+								<TableHead>Check In</TableHead>
+								<TableHead className="text-center">Nights</TableHead>
+								<TableHead className="text-center">Status</TableHead>
 							</TableRow>
-						))}
-					</TableBody>
-				</Table>
-			</div>
+						</TableHeader>
+						<TableBody>
+							{customers.customers?.map((customer: any) => (
+								<TableRow key={customer.id}>
+									<TableCell className="text-xs py-4">{customer.id}</TableCell>
+									<TableCell className="font-bold text-md">{customer.full_name}</TableCell>
+									<TableCell className="text-xs hidden md:table-cell">{customer.email}</TableCell>
+									<TableCell className="">{format(customer.check_in, "dd MMM yyyy")}</TableCell>
+									<TableCell className="text-center">{customer.nights}</TableCell>
+									<TableCell className="text-center uppercase">
+										<Badge variant={customer.status === "confirmed" ? "default" : "destructive"}>
+											{customer.status}
+										</Badge>
+									</TableCell>
+								</TableRow>
+							))}
+						</TableBody>
+					</Table>
+				</CardContent>
+			</Card>
 		</main>
 	);
 }

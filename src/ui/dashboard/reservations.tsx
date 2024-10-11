@@ -67,9 +67,6 @@ export default function ReservationSection(reservations: ReservationProps) {
 	return (
 		<main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
 			<div className="space-y-4">
-				<h1 className="text-2xl font-bold">
-					The Manzil JB<span className="font-normal"> | Dashboard</span>
-				</h1>
 				<div className="grid grid-cols-1 lg:grid-cols-4 gap-4">
 					<div className="w-full lg:col-span-1">
 						<Card>
@@ -110,7 +107,7 @@ export default function ReservationSection(reservations: ReservationProps) {
 											<Tooltip>
 												<TooltipTrigger>
 													<Button variant="ghost" size="icon">
-														<Plus className="h-4 w-4" />
+														<Plus className="h-4 w-4" /> Add
 													</Button>
 												</TooltipTrigger>
 												<TooltipContent side="top" align="center">
